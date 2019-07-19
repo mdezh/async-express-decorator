@@ -25,5 +25,5 @@ toAsyncRouter.setMethods(['get', 'post', 'delete', 'put', 'head'])
 
 const router = toAsyncRouter(express.Router())
 
-router.get('/some-route', someAsyncController)
+router.put('/some-route', someAsyncController)
 ```

@@ -1,6 +1,6 @@
 {
   "name": "async-express-decorator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Transforms express routers or app for transparent work with async controllers and error handling",
   "main": "asyncRouter.js",
   "keywords": ["async", "express", "router", "decorator", "route", "app", "error", "handler", "handling"],
