@@ -4,7 +4,7 @@ Usage:
 
 ```javascript
 const express = require("express")
-const toAsyncRouter = require("async-express-router")
+const toAsyncRouter = require("async-express-decorator")
 
 const router = toAsyncRouter(express.Router())
 
@@ -19,7 +19,7 @@ By default decorator works for methods: get, post, delete. If you want extend or
 
 ```javascript
 const express = require("express")
-const toAsyncRouter = require("async-express-router")
+const toAsyncRouter = require("async-express-decorator")
 
 toAsyncRouter.setMethods(['get', 'post', 'delete', 'put', 'head'])
 
