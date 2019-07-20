@@ -3,27 +3,25 @@ const asyncHandler = (func) => (req, res, next) => Promise.resolve(func(req, res
 let methods = [
     'get',
     'post',
+    'put',
     'delete'
 ]
 
 function toAsyncRouter(router) {
     for (let key in router) {
-        if (methods.indexOf(key) !== -1) {
+        if (methods.includes(key)) {
             let method = router[key]
-            router[key] = (...args) => {
-                if (args.length > 0) {
-                    args[args.length-1] = asyncHandler(args[args.length - 1])
-                }
-                return method.apply(router, args)
-            }
+            router[key] = (path, ...callbacks) => method.call(router, path, ...callbacks.map(cb => asyncHandler(cb)))
         }
     }
     return router
 }
 
-toAsyncRouter.setMethods = (methodsForTransform) => {
-    methods = methodsForTransform.slice()
+toAsyncRouter.setMethods = (methodsArray) => {
+    methods = methodsArray.slice()
 }
+
+toAsyncRouter.getMethods = () => methods.slice()
 
 
 module.exports = toAsyncRouter

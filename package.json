@@ -1,9 +1,9 @@
 {
   "name": "async-express-decorator",
-  "version": "1.0.5",
-  "description": "Transforms express routers or app for transparent work with async controllers and error handling",
+  "version": "1.1.0",
+  "description": "Transforms (decorates) express routers or app for transparent work with async controllers and standard error handling",
   "main": "asyncRouter.js",
-  "keywords": ["async", "express", "router", "decorator", "route", "app", "error", "handler", "handling"],
+  "keywords": ["async", "express", "router", "decorator", "route", "app", "error", "handler", "handling", "try catch", "middleware", "mw", "controller", "callback"],
   "bugs": "m.m.dezhurko@gmail.com",
   "license": "MIT",
   "author": "Mikhail Dezhurko",

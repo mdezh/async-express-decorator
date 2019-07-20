@@ -15,15 +15,22 @@ and so on.
 
 Thrown errors can be catched with standard express middleware.
 
-By default decorator works for methods: get, post, delete. If you want extend or shrink this list, use toAsyncRouter.setMethods() before first toAsyncRouter() call:
+By default decorator works for methods: `get`, `post`, `put`, `delete`. If you want extend or shrink this list, use `toAsyncRouter.setMethods()` **before** `toAsyncRouter()` call:
 
 ```javascript
 const express = require("express")
 const toAsyncRouter = require("async-express-decorator")
 
-toAsyncRouter.setMethods(['get', 'post', 'delete', 'put', 'head'])
+toAsyncRouter.setMethods(['get', 'post', 'all'])
 
 const router = toAsyncRouter(express.Router())
 
-router.put('/some-route', someAsyncController)
+router.all('/some-route', someAsyncController)
 ```
+
+It is also possible to get a list of methods that will be decorated:
+
+```javascript
+console.log(toAsyncRouter.getMethods())
+```
+
